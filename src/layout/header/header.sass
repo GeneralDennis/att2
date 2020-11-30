@@ -1,0 +1,155 @@
+.header
+  width: 100%
+  padding: 75px 97px
+  background: rgba(#19152b, .7)
+
+.header__main
+  width: 100%
+  display: flex
+  justify-content: space-between
+
+.header__logo
+  display: block
+  width: 47px
+  height: 55px
+  object-fit: cover
+
+.header__menu
+  display: flex
+  padding-left: 234px
+
+.header__menu-item
+  padding: 0 15px
+  color: #ffffff
+  font-size: 20px
+  font-weight: 400
+  line-height: 36px
+  cursor: pointer
+  transition: color .3s ease
+  &:first-child
+    padding-left: 0
+  &:last-child
+    padding-right: 0
+  &:hover
+    color: $font-color-active
+
+  a
+    text-decoration: none
+    color: #fff
+    transition: color .3s ease
+    &:hover
+      color: $font-color-active
+  &--active
+    position: relative
+    &::after
+      position: absolute
+      top: 152%
+      left: 50%
+      content: ''
+      height: 10px
+      width: 13px
+      background: url('./triangle.png') 50% 50% no-repeat
+      transform: translateX(-50%)
+
+.header__right, .header__left
+  display: flex
+  align-items: center
+
+.header__button
+  align-self: flex-end
+  padding: 22px 42px
+  font-size: 20px
+  line-height: 30px
+  font-weight: 400
+  color: #fff
+  border-radius: 60px
+  background: $btn-bg-color
+  border: none
+  transition: background .3s ease, color .3s ease
+  cursor: pointer
+  &:hover
+    background: #fff
+    color: $btn-bg-color
+
+.header__burger
+  display: block
+  padding-left: 28px
+  cursor: pointer
+
+  span
+    display: block
+    height: 1px
+    background: #fff
+    transition: background .3s ease
+    &:nth-child(odd)
+      width: 25px
+    &:nth-child(2)
+      width: 35px
+    &:not(:last-child)
+      margin-bottom: 10px
+
+  &:hover
+    span
+      background: $btn-bg-color
+
+.header__bottom
+  padding: 30px 70px 0
+  display: flex
+  justify-content: space-between
+
+.header__bottom-circle
+  display: block
+  height: 13px
+  width: 13px
+  object-fit: cover
+
+.header__bottom-romb
+  display: block
+  height: 28px
+  width: 28px
+  object-fit: cover
+
+.header__submenu
+  display: none
+  padding: 50px 65px 70px 70px
+  max-width: 932px
+  width: auto
+  margin: 0 0 0 auto
+  background: #fff
+  border-radius: 10px
+  color: #000
+  transform: translate(-35%, 10px)
+
+.header__submenu-head
+  display: grid
+  grid-template-columns: repeat(4, 1fr)
+  width: 100%
+  // display: flex
+  // justify-content: space-between
+  padding: 0 30px 22px
+  border-bottom: 1px solid #efefef
+  span
+    font-size: 20px
+    line-height: 36px
+    font-weight: 400
+    color: #282828
+
+
+.header__submenu-main
+  display: grid
+  grid-template-columns: repeat(4, 1fr)
+  // display: flex
+  // justify-content: space-between
+  padding: 30px 30px 0
+  line-height: 36px
+  font-size: 16px
+
+.header__submenu-block
+  display: flex
+  flex-direction: column
+  a
+    text-decoration: none
+    color: rgba(#282828, .8)
+    transition: color .3s ease
+    &:hover
+      color: $font-color-active
