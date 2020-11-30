@@ -2,3 +2,139 @@
   flex-grow: 0
   flex-shrink: 0
   flex-basis: auto
+  padding-top: 100px
+  background: #f6f3ff
+
+.footer__container
+  max-width: 1170px
+  margin: 0 auto
+
+.footer__top
+  display: flex
+  justify-content: space-between
+
+.footer__adress
+  max-width: 305px
+  padding: 56px 0 20px
+  font-size: 18px
+  line-height: 28px
+  font-weight: 400
+  color: rgba(#282828, .8)
+
+.footer__tel, .footer__email
+  display: block
+  padding: 15px 0 10px
+  font-size: 18px
+  line-height: 28px
+  font-weight: 400
+  color: rgba(#282828, .9)
+  text-decoration: none
+  transition: color .3s ease
+  &:hover
+    color: $font-color-active
+
+.footer__email
+  padding: 8px 0 50px
+  color: rgba(#282828, .8)
+
+.footer__social
+  display: flex
+  justify-content: space-between
+  align-items: center
+  max-width: 195px
+
+.footer__social-link
+  display: block
+  display: flex
+  align-items: flex-end
+  justify-content: center
+  height: 44px
+  width: 44px
+  border-radius: 50%
+  background: yellow
+  cursor: pointer
+  transition: background-color .3s
+  &--fb
+    background: url('./social/fb_w.png') 50% 50% no-repeat
+  &--in
+    background: url('./social/in.png') 50% 50% no-repeat
+  &--web
+    background: url('./social/web.png') 50% 50% no-repeat
+  &--tw
+    background: url('./social/tw.png') 50% 50% no-repeat
+
+  &:hover
+    background-color: $btn-bg-color
+
+.footer__right
+  display: grid
+  grid-template-columns: repeat(2, 1fr)
+  gap: 160px
+
+.footer__block
+  display: flex
+  flex-direction: column
+
+.footer__block-title
+  padding-bottom: 48px
+  font-size: 20px
+  line-height: 36px
+  font-weight: 400
+  font-family: $font-family-second
+
+.footer__block-item
+  font-size: 18px
+  line-height: 38px
+  font-weight: 400
+  color: rgba(#242425, .8)
+  text-decoration: none
+  transition: color .3s
+  &:hover
+    color: $font-color-active
+
+.footer__bottom
+  padding: 100px 0 90px
+  display: flex
+  justify-content: space-between
+
+.footer__copyright
+  font-size: 16px
+  line-height: 36px
+  font-weight: 400
+  color: rgba(#242425, .8)
+
+.footer__mobile
+  display: flex
+  align-items: center
+
+.footer__mobile-title
+  padding-right: 25px
+  font-size: 18px
+  line-height: 28px
+  font-weight: 400
+  color: rgba(#242425, .9)
+
+.footer__mobile-item
+  display: inline-block
+  height: 20px
+  width: 20px
+  overflow: hidden
+  &--google
+    background: url('./social//mobile.png') 100% 0% no-repeat
+  &--apple
+    margin-right: 20px
+    background: url('./social//mobile.png') 0% 0% no-repeat
+
+.footer__links
+  font-size: 16px
+  line-height: 36px
+  font-weight: 400
+  a
+    color: rgba(#242425, .8)
+    text-decoration: none
+    transition: color .3s ease
+    &:hover
+      color: $font-color-active
+
+.footer__support
+  padding: 0 15px
