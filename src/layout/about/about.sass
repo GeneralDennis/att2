@@ -1,20 +1,30 @@
 .about
-  padding-top: 123px
-  background: url('./img/about__bg.png') 0 0 no-repeat, url('./img/dot_violet.png') 80% 80% no-repeat, url('./img/dot__green.png') 90% 105% no-repeat
+  padding-top: 178px
+  background: url('./img/about__bg.png') 0 0 no-repeat, url('./img/dot_violet.png') 91.3% 75% no-repeat
   min-height: 832px
 .about__inner
   padding-left: 107px
   display: flex
+  +max-w(1170)
+    flex-direction: column
+  +max-w(1024)
+    padding: 0 30px
 
 .about__img
   display: block
   height: 583px
   width: 775px
-  object-fit: cover
+  +max-w(1500)
+    width: 500px
+    height: 375px
+  +max-w(1170)
+    width: 100%
+    height: auto
 
 .about__description
-  padding: 102px 0 45px 90px
-  background:
+  padding: 82px 0 45px 90px
+  +max-w(1170)
+    padding-left: 0
 
 .about__description-subtitle
   position: relative
@@ -48,8 +58,12 @@
   color: #282828
   z-index: 1
 
+  +max-w(500)
+    font-size: 30px
+    line-height: 35px
+
 .about__description-text
-  padding: 42px 0 39px
+  padding: 36px 0 30px
   max-width: 465px
   width: 100%
   font-size: 22px
@@ -58,7 +72,7 @@
   color: rgba(#282828, .8)
 
 .about__description-subtext
-  padding-bottom: 48px
+  padding-bottom: 44px
   max-width: 450px
   width: 100%
   font-size: 16px
@@ -66,7 +80,7 @@
   font-weight: 400
 
 .about__description-button
-  padding: 23px 57px 22px 56px
+  padding: 13px 57px 16px 56px
   font-size: 20px
   line-height: 30px
   font-weight: 400

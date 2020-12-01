@@ -1,3 +1,7 @@
+- var company = [{href: '/about', title: 'About'},{href: '/contact', title: 'Contact'},{href: '/home', title: 'Home'},{href: '/insights', title: 'Insights'},{href: '/services', title: 'Services & Clients'}, {href: '/work', title: 'Work'}]
+- var solution = [{href: '/marketing', title: 'Digital marketing'},{href: '/phototype', title: 'Phototype'},{href: '/development', title: 'Development'},{href: '/design', title: 'Design'},{href: '/strategy', title: 'Business Strategy'}, {href: '/portfolio', title: 'Agency protfolio'}]
+
+
 footer.footer
   .footer__container
     .footer__top
@@ -15,20 +19,12 @@ footer.footer
       .footer__right
         .footer__block
           h3.footer__block-title Company
-          a(href="/about").footer__block-item About
-          a(href="/contact").footer__block-item Contact
-          a(href="home").footer__block-item Home
-          a(href="insights").footer__block-item Insights
-          a(href="/services").footer__block-item Services & Clients
-          a(href="/work").footer__block-item Work
+          each item in company
+            a(href=item.href).footer__block-item=item.title
         .footer__block
           h3.footer__block-title Solution
-          a(href="/marketing").footer__block-item Digital marketing
-          a(href="/phototype").footer__block-item Phototype
-          a(href="/development").footer__block-item Development
-          a(href="/design").footer__block-item Design
-          a(href="/strategy").footer__block-item Business Strategy
-          a(href="/portfolio").footer__block-item Agency protfolio
+          each item in solution
+            a(href=item.href).footer__block-item=item.title
     .footer__bottom
       .footer__copyright Copyrights 2019 Template_mr Template
       .footer__mobile

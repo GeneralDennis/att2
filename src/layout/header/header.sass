@@ -1,7 +1,9 @@
 .header
   width: 100%
-  padding: 75px 97px
+  padding: 75px 94px
   background: rgba(#19152b, .7)
+  +max-w(500)
+    padding: 30px
 
 .header__main
   width: 100%
@@ -17,9 +19,14 @@
 .header__menu
   display: flex
   padding-left: 234px
+  +max-w(1275)
+    padding-left: 50px
+
+  +max-w(1075)
+    display: none
 
 .header__menu-item
-  padding: 0 15px
+  padding: 0 14px
   color: #ffffff
   font-size: 20px
   font-weight: 400
@@ -43,7 +50,7 @@
     position: relative
     &::after
       position: absolute
-      top: 152%
+      top: 125%
       left: 50%
       content: ''
       height: 10px
@@ -57,7 +64,7 @@
 
 .header__button
   align-self: flex-end
-  padding: 22px 42px
+  padding: 18px 42px
   font-size: 20px
   line-height: 30px
   font-weight: 400
@@ -70,10 +77,12 @@
   &:hover
     background: #fff
     color: $btn-bg-color
+  +max-w(400)
+    display: none
 
 .header__burger
   display: block
-  padding-left: 28px
+  padding-left: 30px
   cursor: pointer
 
   span
@@ -93,9 +102,10 @@
       background: $btn-bg-color
 
 .header__bottom
-  padding: 30px 70px 0
+  padding: 0px 104px 0 71px
   display: flex
   justify-content: space-between
+
 
 .header__bottom-circle
   display: block
@@ -111,14 +121,18 @@
 
 .header__submenu
   display: none
-  padding: 50px 65px 70px 70px
+  padding: 50px 65px 41px 70px
   max-width: 932px
   width: auto
   margin: 0 0 0 auto
   background: #fff
   border-radius: 10px
   color: #000
-  transform: translate(-35%, 10px)
+  transform: translate(-33%, 2px)
+  +max-w(1550)
+    transform: translateX(-10%)
+  +max-w(1550)
+    transform: translateX(0%)
 
 .header__submenu-head
   display: grid
@@ -126,7 +140,7 @@
   width: 100%
   // display: flex
   // justify-content: space-between
-  padding: 0 30px 22px
+  padding: 0 0px 10px 30px
   border-bottom: 1px solid #efefef
   span
     font-size: 20px
@@ -140,7 +154,7 @@
   grid-template-columns: repeat(4, 1fr)
   // display: flex
   // justify-content: space-between
-  padding: 30px 30px 0
+  padding: 30px 0px 0 30px
   line-height: 36px
   font-size: 16px
 

@@ -1,3 +1,14 @@
+- var data = [{img: 'images/analysis.png',tileClass: 'content', title: 'Content Marketing', text: 'We craft great content that keep your users interested and coming back for more. I have mixed feelings about the explosion of web content.'},{img: 'images/cloud.png',tileClass: 'link', title: 'Link Building', text: 'Links are still a powerful ranking factor in SEO. However, acquiring the wrong links could lead to a Google Penalty.'},{img: 'images/adwords.png',tileClass: 'adwords', title: 'AdWords & PPC', text: 'Is your Google AdWords budget disappearing without sales or calls? Or are you new to pay per click advertising, PPC?'},{img: 'images/rocket.png',tileClass: 'seo', title: 'SEO & Social media', text: 'Your data tells a story that we need to understand. We’ve built a proprietary report that pulls important SEO data from Google Search Console'}]
+
+
+mixin tile(imgSrc, tileClass, title, text)
+  .offer__tile
+    div(class='offer__tile-img offer__tile-img--' + tileClass)
+      img(src=imgSrc, alt="")
+    h3.offer__tile-title=title
+    p.offer__tile-text=text
+
+
 section.section
   .offer
     img.offer__bg(src="images/offer__bg.png", alt="")
@@ -8,27 +19,5 @@ section.section
         button.offer__button See More Services
 
       .offer__masonry
-        .offer__tile
-          .offer__tile-img.offer__tile-img--content
-            img(src="images/analysis.png", alt="")
-          h3.offer__tile-title Content Marketing
-          p.offer__tile-text We craft great content that keep your users interested and coming back for more. I have mixed feelings about the explosion of web content.
-
-        .offer__masonry-center
-          .offer__tile
-            .offer__tile-img.offer__tile-img--link
-              img(src="images/cloud.png", alt="")
-            h3.offer__tile-title Link Building
-            p.offer__tile-text Links are still a powerful ranking factor in SEO. However, acquiring the wrong links could lead to a Google Penalty.
-
-          .offer__tile
-            .offer__tile-img.offer__tile-img--seo
-              img(src="images/rocket.png", alt="")
-            h3.offer__tile-title SEO & Social media
-            p.offer__tile-text Your data tells a story that we need to understand. We’ve built a proprietary report that pulls important SEO data from Google Search Console
-
-        .offer__tile
-          .offer__tile-img.offer__tile-img--adwords
-            img(src="images/adwords.png", alt="")
-          h3.offer__tile-title AdWords & PPC
-          p.offer__tile-text Is your Google AdWords budget disappearing without sales or calls? Or are you new to pay per click advertising, PPC?
+        each item in data
+          +tile(item.img, item.tileClass, item.title, item.text)

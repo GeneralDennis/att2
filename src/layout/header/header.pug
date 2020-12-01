@@ -1,21 +1,21 @@
+- var block1 = [{href: '/client', title: 'Client'},{href: '/progress_bar', title: 'Progress Bar'},{href: '/header', title: 'Header'},{href: '/footer', title: 'Footer'},{href: '/accordions', title: 'Accordions'},{href: '/pricing', title: 'Pricing'}]
+- var block2 = [{href: '/contact_forms', title: 'Contact Forms'},{href: '/counters', title: 'Counters'},{href: '/icon_box', title: 'Icon box'},{href: '/subscribe', title: 'Subscribe Newsletter'},{href: '/action_butt', title: 'Action button'}, {href: '/video_sec', title: 'Video Section'}]
+- var block3 = [{href: '/creative_shape', title: 'Creative_Shape'},{href: '/blog_box', title: 'Blog box'},{href: '/testimonial', title: 'Testimonial'},{href: '/services', title: 'Services'},{href: '/about', title: 'About us'}, {href: '/faq', title: 'Faq'}]
+- var block4 = [{href: '/404', title: '404'},{href: '/coming_soon', title: 'Coming Soon Page'},{href: '/button', title: 'Button'},{href: '/typography', title: 'Typography'},{href: '/team', title: 'Team'}, {href: '/structure', title: 'Structure'}]
+
+- var menuItems = [{href: '/home', title: 'Home', jsClass: ''}, {href: '/about', title: 'About', jsClass: ''}, {href: '/portfolio', title: 'Portfolio', jsClass: ''}, {href: '/services', title: 'Services', jsClass: ''},{href: '/page', title: 'Page', jsClass: ''}, {title: 'Elements', jsClass: ' js-open-submenu'}]
+
+mixin menuItem(itemHref, title, jsClass)
+    li(class='header__menu-item' + jsClass)
+      a(href=itemHref)=title
 header.header
   .header__main
     .header__left
       a(href="/")
         img.header__logo(src="images/logo.png", alt="")
       ul.header__menu
-        li.header__menu-item
-          a(href="/home") Home
-        li.header__menu-item
-          a(href="/about") About
-        li.header__menu-item
-          a(href="/portfolio") Portfolio
-        li.header__menu-item
-          a(href="/services") Services
-        li.header__menu-item
-          a(href="/page") Page
-        li.header__menu-item.js-open-submenu
-          a Elements
+        each item in menuItems
+          +menuItem(item.href, item.title, item.jsClass)
 
     .header__right
       button.header__button Contact us
@@ -32,33 +32,17 @@ header.header
       span Elements 4
     .header__submenu-main
       .header__submenu-block
-        a(href="client") Client
-        a(href="/progress_bar") Progress Bar
-        a(href="/header") Header
-        a(href="/footer") Footer
-        a(href="/accordions") Accordions
-        a(href="/pricing") Pricing
+        each item in block1
+          a(href=item.href)=item.title
       .header__submenu-block
-        a(href="/contact_forms") Contact Forms
-        a(href="/counters") Counters
-        a(href="/icon_box") Icon box
-        a(href="/subscribe") Subscribe Newsletter
-        a(href="/action_butt") Action button
-        a(href="/video_sec") Video Section
+        each item in block2
+          a(href=item.href)=item.title
       .header__submenu-block
-        a(href="/creative_shape") Creative_Shape
-        a(href="/blog_box") Blog box
-        a(href="/testimonial") Testimonial
-        a(href="/services") Services
-        a(href="/about") About us
-        a(href="/faq") Faq
+        each item in block3
+          a(href=item.href)=item.title
       .header__submenu-block
-        a(href="/404") 404
-        a(href="/coming_soon") Coming Soon Page
-        a(href="/button") Button
-        a(href="/typography") Typography
-        a(href="/team") Team
-        a(href="/structure") Structure
+        each item in block4
+          a(href=item.href)=item.title
 
   .header__bottom
     img.header__bottom-circle(src="images/circle.png", alt="")
