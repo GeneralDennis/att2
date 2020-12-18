@@ -57,17 +57,26 @@
   height: 44px
   width: 44px
   border-radius: 50%
-  background: yellow
   cursor: pointer
-  transition: background-color .3s
+  transition: background-color .3s, background-image .3s
+  background-position: 50% 50%
+  background-repeat: no-repeat
   &--fb
-    background: url('./social/fb_w.png') 50% 50% no-repeat
+    background-image: url('./social/fb_g.png')
+    &:hover
+      background-image: url('./social/fb_w.png')
   &--in
-    background: url('./social/in.png') 50% 50% no-repeat
+    background-image: url('./social/in_g.png')
+    &:hover
+      background-image: url('./social/in_w.png')
   &--web
-    background: url('./social/web.png') 50% 50% no-repeat
+    background-image: url('./social/web_g.png')
+    &:hover
+      background-image: url('./social/web_w.png')
   &--tw
-    background: url('./social/tw.png') 50% 50% no-repeat
+    background-image: url('./social/tw_g.png')
+    &:hover
+      background-image: url('./social/tw_w.png')
 
   &:hover
     background-color: $btn-bg-color
@@ -136,11 +145,14 @@
   height: 20px
   width: 20px
   overflow: hidden
+  transition: transform .3s
   &--google
     background: url('./social//mobile.png') 100% 0% no-repeat
   &--apple
     margin-right: 20px
     background: url('./social//mobile.png') 0% 0% no-repeat
+  &:hover
+    transform: scale(1.25)
 
 .footer__links
   font-size: 16px

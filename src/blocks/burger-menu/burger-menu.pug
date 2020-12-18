@@ -1,0 +1,16 @@
+- var menuItems = [{href: '/home', title: 'Home'}, {href: '/about', title: 'About'}, {href: '/portfolio', title: 'Portfolio'}, {href: '/services', title: 'Services'},{href: '/page', title: 'Page'}, {title: 'Elements'}]
+
+mixin menuItem(itemHref, title)
+  li(class='burger-menu__item header__menu-item')
+    a(href=itemHref)=title
+
+.burger-menu
+  .burger-menu__burger-close.js-burger-close
+    span
+    span
+    span
+  ul.burger-menu__items
+    each item in menuItems
+      +menuItem(item.href, item.title)
+
+  button.burger-menu__button.header__button Contact us

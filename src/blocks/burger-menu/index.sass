@@ -1,0 +1,84 @@
+.burger-menu
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  align-items: start
+  position: fixed
+  top: 0
+  bottom: 0
+  right: -370px
+  padding: 30px 0 30px 30px
+  width: 320px
+  height: 100vh
+  background: rgba(25, 21, 43, 1)
+  transition: right .3s
+  z-index: 5
+
+  &--open
+    right: 0px
+    +max-w(640)
+      width: 100%
+      left: 0
+
+  +max-w(640)
+    padding-top: 65px
+
+.burger-menu__item
+  padding: 0
+
+.burger-menu__burger-close
+  position: absolute
+  display: block
+  height: 63px
+  width: 40px
+  padding: 20px 0 0 20px
+  right: 420px
+  top: 74px
+  left: -39px
+  cursor: pointer
+  z-index: 3
+  background: transparent
+  border-bottom-left-radius: 63px
+  border-top-left-radius: 63px
+  transition: left .5s
+  background: rgba(25, 21, 43, 1)
+
+  +max-w(500)
+    top: 30px
+    right: 380px
+
+
+  span
+    position: absolute
+    display: block
+    height: 1px
+    background: $btn-bg-color
+    transition: background .3s ease, transform .3s, width .3s
+
+    &:nth-child(1)
+      width: 20px
+      top: 20px
+      transform: rotate(24deg) translateX(16px)
+
+    &:nth-child(3)
+      width: 20px
+      top: 41px
+      transform: rotate(-21deg) translateX(16px)
+
+    &:nth-child(2)
+      top: 31px
+      width: 35px
+
+  &:hover
+
+    span
+      background: #fff
+
+  +max-w(640)
+    top: 0
+    left: 0
+
+.burger-menu__button
+  align-self: center
+  +max-w(400)
+    display: block

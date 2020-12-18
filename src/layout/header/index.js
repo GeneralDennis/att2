@@ -9,4 +9,10 @@ export default () => {
       $submenu.slideToggle();
     })
   }
+  $(window).on('resize',function(){
+    if($(window).innerWidth() < 1076) {
+      $submenu.slideUp();
+      $openButt.removeClass('header__menu-item--active');
+    }
+  })
 }
